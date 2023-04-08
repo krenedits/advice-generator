@@ -1,8 +1,6 @@
 import Card from './Card';
 import { useCallback, useEffect, useState } from 'react';
 
-const URL = 'https://api.adviceslip.com/advice';
-
 export default function Advice() {
     const [advice, setAdvice] = useState('');
     const [number, setNumber] = useState(0);
@@ -15,7 +13,7 @@ export default function Advice() {
 
     const fetchAdvice = useCallback(() => {
         setLoading(true);
-        fetch(URL)
+        fetch('https://api.adviceslip.com/advice')
             .then((response) => response.json())
             .then((data) => {
                 const { advice, id } = data.slip;
