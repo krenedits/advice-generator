@@ -1,5 +1,3 @@
-import DividerDesktop from '../../images/pattern-divider-desktop.svg';
-import DividerMobile from '../../images/pattern-divider-mobile.svg';
 import Dice from '../../images/icon-dice.svg';
 
 interface CardProps {
@@ -9,7 +7,9 @@ interface CardProps {
 }
 
 export default function Card({ children, number, toggleRefresh }: CardProps) {
-    const src = window.innerWidth < 500 ? DividerMobile : DividerDesktop;
+    const src = `../../images/pattern-divider-${
+        window.innerWidth < 500 ? 'mobile' : 'desktop'
+    }.svg`;
 
     return (
         <div
