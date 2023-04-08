@@ -7,7 +7,7 @@ interface CardProps {
 }
 
 export default function Card({ children, number, toggleRefresh }: CardProps) {
-    const src = `/images/pattern-divider-${
+    const src = `./images/pattern-divider-${
         window.innerWidth < 500 ? 'mobile' : 'desktop'
     }.svg`;
 
